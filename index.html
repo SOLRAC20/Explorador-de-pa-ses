@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+    <head>
+
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Explorador de Países</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+      <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    </head>
+
+    <body>
+
+    <h1>🌍 Clique no globo para explorar países</h1>
+
+    <div class="search-container">
+      <div class="search-bar">
+        <input id="searchInput" type="text" placeholder="Digite o nome do país" />
+        <button onclick="procurarPais()">🔍 Procurar</button>
+      </div>
+      <div class="action-buttons">
+        <button onclick="mostrarRota()">📍 Ver rota</button>
+        <button onclick="mostrarEstatisticas()">📊 Ver estatísticas</button>
+      </div>
+    </div>
+
+    <div id="loadingSpinner" style="display:none;">Carregando...</div>
+    <div id="globeViz"></div>
+    <div id="info" class="info-box"></div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/three"></script>
+    <script src="https://unpkg.com/globe.gl"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    </body>
+
+</html>
